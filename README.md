@@ -1,34 +1,55 @@
-This is a template project for Android Studio that allows you to create an android webview application in minutes. You can use it to create a simple app for your website or as a starting point for your HTML5 based android app.
+# Project FileUp for Android
 
-### Getting started
+<img src="Logotype primary.png" width="200" height="" />
 
-[Download](https://github.com/slymax/webview/archive/master.zip) or clone this repository and import it into Android Studio.
+Os-FileUp: WebView based project to help android developers understand how to upload and process images/videos for any hybrid app. This project explains the usage of gallery and camera intent.
 
-### Using a remote source
+## Getting Started
+This project contains android application build files, that you can download and use directly with latest Android Studio. Follow further steps to get started in your personalised environment.
 
-If you want to create an app that displays the content of a remote website
+### Requirements
+Minimum Android API 16+ (4.1 JellyBean) SDK *(it all works but looks kinda ugly in JB)*.
+You can use any IDE of your choice but to be specific, I used latest Android Studio *(till the last project update)* with updated SDKs and Builds.
 
-1. uncomment lines **30** and **31** in `MainActivity.java` and replace `http://example.com` with your remote source
+### Test Run
+Just putting these basic steps to help starters:
+1. `File > Open` choose project folder and let android studio download supportive libraries.
+2. `Build > Clean Project` and `Build > Rebuild Project`
+3. If everything goes alright, you can start testing
+4. In case or any error, check Build and Logcat tab for details
 
-	```java
-	mWebView.loadUrl("http://example.com");
-	mWebView.setWebViewClient(new MyWebViewClient());
-	```
+### Permissions
+Followings are permissions required for all the mentioned features to work.
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.CAMERA"/>
+```
+`INTERNET` permission is required to access online content and `WRITE_EXTERNAL_STORAGE`+`CAMERA` permissions to take photo from camera and save it to gallery.
 
-2. open the `MyWebViewClient.java` file and replace `example.com` on line **14** with your custom hostname
+### Know Bugs
+```
+22/09/19 - Camera not working in API 29
+```
 
-	```java
-	if (Objects.requireNonNull(Uri.parse(url).getHost()).endsWith("example.com")) {
-	```
+## About Project
 
-### Using a local source
+This project is initially developed by **[Ghazi Khan](https://infeeds.com/u/mgks)**.
 
-If you want to create a local HTML5 android app
+#### I'd appreciate even your little contribution to my work, it helps me keep such open-source projects updated. If this project helped you or your business and you feel like donating some change, you can Paypal me - getmgks@gmail.com or buy me a coffee from the button below.
 
-1. uncomment line **34** in `MainActivity.java`
+<a href="https://ko-fi.com/Z8Z4BPQ6" target="_blank" title="Buy me a Coffee"><img width="150" style="border:0px;width:150px;" src="https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a>
 
-	```java
-	mWebView.loadUrl("file:///android_asset/index.html");
-	```
+## License
+This project is published under the MIT License - check out [LICENSE.md](LICENSE.md) file or read [MIT license](https://opensource.org/licenses/MIT) for more details.
 
-2. put all your files (including your `index.html`) in the `assets` directory
+## Acknowledgment
+You can post any issue(s) you are facing with regards to the project in the [Issues section](https://github.com/mgks/Os-FileUp/issues).
+If you want to contribute to the project, you're most welcome to help make a smarter project than it is.
+
+### Special Credits
+Thanks [mansya](https://github.com/mansya) for the updated logo.
+
+**PROJECT NOTE:** Android 4.4 doesn't support webview upload default method and it's a permanent bug as no more KitKat updates are going to be made. All other versions are working fine.
+
+`A PERSONAL NOTE: You must keep up with programming. Sometimes it's difficult and other times easy but fun overall. You can create your own world with programming and that's what makes this job interesting. All the best for your next voyage.`

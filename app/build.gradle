@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
     defaultConfig {
-        applicationId "com.edukio.checkmorfo"
+        applicationId 'com.edukio.checkmorfo'
         minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 10
-        versionName "1.0"
+        targetSdkVersion 29
+        versionCode 11
+        versionName '1.1'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -16,8 +18,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.13-beta-3'
+    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
 }
